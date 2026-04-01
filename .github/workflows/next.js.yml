@@ -1,0 +1,45 @@
+name: Next.js
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version: 25.8.2
+          cache: npm
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Run Next.js linting
+        run: npm run lint
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version: 25.8.2
+          cache: npm
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Build Next.js application
+        run: npm run build
