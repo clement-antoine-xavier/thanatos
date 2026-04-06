@@ -1,59 +1,67 @@
-# Mictlantecuhtli – Animal Mortality Surveillance Platform
+# Mictlantecuhtli – Plateforme de surveillance de la mortalité animale
 
-## Project Overview
+## Aperçu du projet
 
-Mictlantecuhtli is a platform designed to strengthen **animal epidemiological surveillance** by leveraging **animal mortality data** as an early-warning signal for unusual health events.
+Mictlantecuhtli est une plateforme conçue pour renforcer la **surveillance épidémiologique animale** en exploitant les **données de mortalité animale** comme signal d’alerte précoce des événements sanitaires inhabituels.
 
-Faced with heterogeneous animal health data and practical constraints in the field, the goal is to build **automated, high‑performance tools for data management, analysis, and modelling**.
-
----
-
-## Objectives
-
-- Build a **comprehensive and standardised animal mortality database**.
-
-- Design **software tools** for data management and visualization.
-
-- Implement **automated epidemiological statistics and indicators**, updated in (near) real time (rates, trends, seasonality).
-
-- Contribute to **methodological work in epidemiological modelling** (detection of anomalies, risk patterns).
+Face à des données de santé animale hétérogènes et à des contraintes pratiques de terrain, l’objectif est de construire des **outils automatisés et performants de gestion, d’analyse et de modélisation des données**.
 
 ---
 
-## Main Features
+## Objectifs
 
-### 1. Data Management and Integration
+- Construire une **base de données de mortalité animale complète et standardisée**.  
 
-- Integration of **multi-source data** (e.g. BDNI, SIGAL/RESYTAL, SPE and other local databases).
+- Concevoir des **outils logiciels** de gestion et de visualisation des données.  
 
-1. BDNI (Base de Données Nationale d'Identification) – national database of animal identification and movements.
+- Mettre en place des **statistiques et indicateurs épidémiologiques automatisés**, mis à jour en (quasi) temps réel (taux, tendances, saisonnalité).  
 
-2. SIGAL/RESYTAL – regional databases of animal health and mortality records.
+- Contribuer aux **travaux méthodologiques en modélisation épidémiologique** (détection d’anomalies, profils de risque).  
 
-3. SPE (Système de Production d'Élevage) – production and health data from farms.
+---
 
-- **Data cleaning, standardisation, and documentation** of variables and metadata.
+## Fonctionnalités principales
 
-- Design of a **robust relational database model** (SQL or equivalent) for long-term operation.
+### 1. Gestion et intégration des données
 
-### 2. Application Interfaces
+- Intégration de **données multi‑sources** (par ex. BDNI, SIGAL/RESYTAL, SPE et autres bases locales).  
 
-- **Data management interface**:  
-  - Browsing, filtering, and editing mortality records.  
-  - Controlled imports from external systems.
+  1. BDNI (Base de Données Nationale d’Identification) – base nationale d’identification et de mouvements des animaux.  
 
-- **User‑centric design** based on the needs of epidemiologists, veterinarians, technicians, and farmers.
+  2. SIGAL/RESYTAL – bases régionales d’enregistrements de santé animale et de mortalité.  
 
-- **Interactive dashboards** for monitoring key indicators and generating dynamic views.
+  3. SPE (Système de Production d’Élevage) – données de production et de santé des élevages.  
 
-### 3. Statistical Analysis and Modelling
+- **Nettoyage, standardisation et documentation des données** (variables et métadonnées).  
 
-- Definition and computation of **mortality indicators**: rates, temporal trends, seasonal patterns by species, region, and time period.
+- Conception d’un **modèle de base relationnelle robuste** (SQL ou équivalent) pour une exploitation durable.  
 
-- **Automation of statistics generation** and scheduled updates to feed dashboards.
+### 2. Interfaces applicatives
 
-- Contribution to **exploratory analyses** and **epidemiological modelling approaches** (e.g. outbreak detection, anomaly detection).
+- **Interface de gestion des données** :  
+  - Consultation, filtrage et édition des enregistrements de mortalité.  
+  - Imports contrôlés depuis des systèmes externes.  
 
-## Contributing
+- **Conception centrée utilisateur** fondée sur les besoins des épidémiologistes, vétérinaires, techniciens et éleveurs.  
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
+- **Tableaux de bord interactifs** pour suivre les indicateurs clés et générer des vues dynamiques.  
+
+### 3. Analyse statistique et modélisation
+
+- Définition et calcul des **indicateurs de mortalité** : taux, tendances temporelles, profils saisonniers par espèce, région et période.  
+
+- **Automatisation de la production statistique** et mises à jour planifiées pour alimenter les tableaux de bord.  
+
+- Contribution aux **analyses exploratoires** et aux **approches de modélisation épidémiologique** (par ex. détection de foyers, détection d’anomalies).  
+
+---
+
+## Processus lors de la mort d’un animal dans un élevage
+
+Pour mieux comprendre les flux de données et les acteurs impliqués, voici un résumé du processus de [gestion des décès animaux dans les élevages](docs/ANIMAL_DEATH_PROCESS.md).
+
+---
+
+## Contribution
+
+Pour la contribution, merci de consulter le guide de [contribution](CONTRIBUTING.md) et le [code de conduite](CODE_OF_CONDUCT.md) du projet.

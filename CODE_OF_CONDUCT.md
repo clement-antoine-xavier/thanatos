@@ -1,44 +1,45 @@
-# Code of Conduct
+# Code de conduite
 
-## Our Commitment
+## Notre engagement
 
-We are committed to providing a welcoming, inclusive, and respectful experience for everyone participating in this project, regardless of background, identity, or experience level.
+Nous nous engageons à offrir une expérience accueillante, inclusive et respectueuse à toutes les personnes qui participent à ce projet, quel que soit leur parcours, leur identité ou leur niveau d’expérience.
 
-## Expected Behavior
+## Comportements attendus
 
-Participants are expected to:
+Les participant(e)s sont invité(e)s à :
 
-- Be respectful and constructive in discussions.
-- Assume good intent and collaborate in good faith.
-- Give and receive feedback professionally.
-- Focus on what is best for the community and the project.
+- Faire preuve de respect et de constructivité dans les échanges.  
+- Présumer la bonne intention et collaborer de bonne foi.  
+- Donner et recevoir des retours de manière professionnelle.  
+- Se concentrer sur ce qui est bénéfique pour la communauté et le projet.  
 
-## Unacceptable Behavior
+## Comportements inacceptables
 
-The following behavior is not acceptable:
+Les comportements suivants ne sont pas acceptables :
 
-- Harassment, intimidation, discrimination, or personal attacks.
-- Trolling, insulting, or derogatory comments.
-- Public or private abuse.
-- Publishing private information without explicit permission.
-- Any other conduct that would be inappropriate in a professional setting.
+- Harcèlement, intimidation, discrimination ou attaques personnelles.  
+- Trolling, insultes ou commentaires dénigrants.  
+- Violences verbales en public ou en privé.  
+- Publication d’informations privées sans autorisation explicite.  
+- Tout autre comportement inapproprié dans un cadre professionnel.  
 
-## Enforcement Responsibilities
+## Responsabilités d’application
 
-Project maintainers are responsible for clarifying and enforcing this Code of Conduct and may take corrective action in response to behavior they find inappropriate or harmful.
+Les mainteneurs du projet sont responsables de clarifier et d’appliquer ce Code de conduite, et peuvent prendre des mesures correctives face aux comportements jugés inappropriés ou nuisibles.
 
-## Scope
+## Périmètre
 
-This Code of Conduct applies in all project spaces, including issues, pull requests, discussions, and other related communication channels.
+Ce Code de conduite s’applique à tous les espaces du projet, y compris les issues, les pull requests, les discussions et les autres canaux de communication associés.
 
-## Reporting
+## Signalement
 
-If you experience or witness unacceptable behavior, please report it to the maintainers by opening a private communication channel where possible. Reports will be reviewed promptly and handled as confidentially as possible.
+Si vous subissez ou observez un comportement inacceptable, merci de le signaler aux mainteneurs via un canal de communication privé lorsque cela est possible.  
+Les signalements seront examinés rapidement et traités de façon aussi confidentielle que possible.
 
-## Enforcement Actions
+## Mesures d’application
 
-Maintainers may take any action they deem appropriate, including warnings, temporary bans, or permanent removal from project spaces.
+Les mainteneurs peuvent prendre toute mesure qu’ils jugent appropriée, notamment des avertissements, des exclusions temporaires ou une exclusion permanente des espaces du projet.
 
 ## Attribution
 
-This Code of Conduct is inspired by common open source community standards and adapted for this project.
+Ce Code de conduite s’inspire des standards courants des communautés open source et a été adapté à ce projet.
