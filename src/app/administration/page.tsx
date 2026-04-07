@@ -1,35 +1,24 @@
-import { Box, Card, CardContent, Chip, Grid, Paper, Stack, Table, TableBody, TableCell, TableHead, TableRow, Typography } from "@mui/material";
+import { Card, CardContent, Chip, Grid, Paper, Stack, Table, TableBody, TableCell, TableHead, TableRow, Typography } from "@mui/material";
 import { getTranslations } from "next-intl/server";
 
 import { administrationImports, administrationReferentials, administrationUsers } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 export default async function AdministrationPage() {
   const t = await getTranslations("dashboard.pages.administration");
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card>
-          <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-            <Stack direction={{ xs: "column", lg: "row" }} justifyContent="space-between" spacing={2}>
-              <Box sx={{ maxWidth: 760 }}>
-                <Chip label={t("badge")} sx={{ mb: 2 }} />
-                <Typography variant="h4" fontWeight={800} gutterBottom>
-                  {t("titleMain")}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  {t("subtitleMain")}
-                </Typography>
-              </Box>
-              <Stack direction={{ xs: "column", lg: "row" }} spacing={1} flexWrap="wrap" alignItems="flex-start">
-                <Chip label={t("chips.users")} color="primary" />
-                <Chip label={t("chips.imports")} color="warning" />
-                <Chip label={t("chips.audit")} color="success" />
-              </Stack>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
+      <PageHeader
+        badge={t("badge")}
+        title={t("titleMain")}
+        subtitle={t("subtitleMain")}
+        chips={[
+          { label: t("chips.users"), color: "primary" },
+          { label: t("chips.imports"), color: "warning" },
+          { label: t("chips.audit"), color: "success" },
+        ]}
+      />
 
       <Grid size={{ xs: 12, lg: 7 }}>
         <Card sx={{ height: "100%" }}>

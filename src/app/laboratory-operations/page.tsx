@@ -2,24 +2,14 @@ import { Card, CardContent, Chip, Grid, Stack, Table, TableBody, TableCell, Tabl
 import { getTranslations } from "next-intl/server";
 
 import { laboratoryQueue, laboratoryResults } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 export default async function LaboratoryOperationsPage() {
   const t = await getTranslations("dashboard.pages.laboratoryOperations");
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card>
-          <CardContent>
-            <Typography variant="h5" fontWeight={800} gutterBottom>
-              {t("titleMain")}
-            </Typography>
-            <Typography color="text.secondary">
-              {t("subtitleMain")}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+      <PageHeader title={t("titleMain")} subtitle={t("subtitleMain")} titleVariant="h5" density="compact" />
 
       <Grid size={{ xs: 12, lg: 7 }}>
         <Card>

@@ -17,6 +17,7 @@ import {
 import { getTranslations } from "next-intl/server";
 
 import { alertInbox, alertRules } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 const levelColor = (level: string) => {
   switch (level) {
@@ -36,28 +37,17 @@ export default async function AlertsPage() {
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card>
-          <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-            <Stack direction={{ xs: "column", lg: "row" }} justifyContent="space-between" spacing={2}>
-              <Box sx={{ maxWidth: 740 }}>
-                <Chip label={t("badge")} sx={{ mb: 2 }} />
-                <Typography variant="h4" fontWeight={800} gutterBottom>
-                  {t("title")}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  {t("subtitle")}
-                </Typography>
-              </Box>
-              <Stack direction="row" spacing={1} flexWrap="wrap" alignItems="flex-start">
-                <Chip label="Critique 4" color="error" />
-                <Chip label="Alerte 11" color="warning" />
-                <Chip label="Vigilance 22" color="info" />
-              </Stack>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
+      <PageHeader
+        badge={t("badge")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        maxWidth={740}
+        chips={[
+          { label: "Critique 4", color: "error" },
+          { label: "Alerte 11", color: "warning" },
+          { label: "Vigilance 22", color: "info" },
+        ]}
+      />
 
       <Grid size={{ xs: 12, lg: 5 }}>
         <Card sx={{ height: "100%" }}>

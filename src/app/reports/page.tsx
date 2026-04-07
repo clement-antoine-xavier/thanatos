@@ -18,6 +18,7 @@ import {
 import { getTranslations } from "next-intl/server";
 
 import { recentDeclarations, multipleDeathMock, singleDeathMock } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 const fieldSx = { bgcolor: "grey.50" };
 
@@ -26,28 +27,16 @@ export default async function ReportsPage() {
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card>
-          <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-            <Stack direction={{ xs: "column", lg: "row" }} justifyContent="space-between" spacing={2}>
-              <Box sx={{ maxWidth: 760 }}>
-                <Chip label={t("badge")} sx={{ mb: 2 }} />
-                <Typography variant="h4" fontWeight={800} gutterBottom>
-                  {t("title")}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  {t("subtitle")}
-                </Typography>
-              </Box>
-              <Stack direction={{ xs: "column", lg: "row" }} spacing={1} flexWrap="wrap" alignItems="flex-start">
-                <Chip label={t("titleSingle")} color="primary" />
-                <Chip label={t("titleMultiple")} color="warning" />
-                <Chip label={t("fields.removal")} color="info" />
-              </Stack>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
+      <PageHeader
+        badge={t("badge")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        chips={[
+          { label: t("titleSingle"), color: "primary" },
+          { label: t("titleMultiple"), color: "warning" },
+          { label: t("fields.removal"), color: "info" },
+        ]}
+      />
 
       <Grid size={{ xs: 12, lg: 7 }}>
         <Card sx={{ height: "100%" }}>

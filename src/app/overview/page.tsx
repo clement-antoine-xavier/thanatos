@@ -24,6 +24,7 @@ import {
 import { getTranslations } from "next-intl/server";
 
 import { overviewActivity, overviewAlerts, overviewCases, overviewFlow, overviewMetrics, overviewTerritories } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 const alertColor = (severity: string) => {
   switch (severity) {
@@ -54,63 +55,53 @@ export default async function Page() {
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card sx={{ overflow: "hidden" }}>
-          <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-            <Stack spacing={2.5}>
-              <Stack direction={{ xs: "column", md: "row" }} justifyContent="space-between" alignItems="flex-start" spacing={2}>
-                <Box sx={{ maxWidth: 760 }}>
-                  <Chip label={t("badge")} sx={{ mb: 2 }} />
-                  <Typography component="h1" variant="h3" fontWeight={800} gutterBottom>
-                    {t("heroTitle")}
-                  </Typography>
-                  <Typography variant="body1" sx={{ maxWidth: 760, opacity: 0.92, fontWeight: 500 }}>
-                    {t("heroSubtitle")}
-                  </Typography>
-                </Box>
+      <PageHeader
+        badge={t("badge")}
+        title={t("heroTitle")}
+        subtitle={t("heroSubtitle")}
+        titleVariant="h3"
+        titleComponent="h1"
+        subtitleSx={{ maxWidth: 760, opacity: 0.92, fontWeight: 500 }}
+        actions={
+          <>
+            <Button href="/reports" variant="contained" fullWidth sx={{ width: { xs: "100%", md: "auto" } }}>
+              {t("heroActions.newReport")}
+            </Button>
+            <Button href="/alerts" variant="outlined" fullWidth sx={{ width: { xs: "100%", md: "auto" } }}>
+              {t("heroActions.viewAlerts")}
+            </Button>
+          </>
+        }
+      >
+        <Divider />
 
-                <Stack direction={{ xs: "column", md: "row" }} spacing={1.5} flexWrap="wrap" justifyContent="flex-end" width={{ xs: "100%", md: "auto" }}>
-                  <Button href="/reports" variant="contained" fullWidth sx={{ width: { xs: "100%", md: "auto" } }}>
-                    {t("heroActions.newReport")}
-                  </Button>
-                  <Button href="/alerts" variant="outlined" fullWidth sx={{ width: { xs: "100%", md: "auto" } }}>
-                    {t("heroActions.viewAlerts")}
-                  </Button>
+        <Grid container spacing={2}>
+          {overviewMetrics.map((metric) => (
+            <Grid key={metric.label} size={{ xs: 12, sm: 6, lg: 3 }}>
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 2.5,
+                  borderRadius: 3,
+                  bgcolor: "grey.50",
+                }}
+              >
+                <Stack direction="row" justifyContent="space-between" alignItems="baseline" spacing={2}>
+                  <Box>
+                    <Typography variant="body2" sx={{ opacity: 0.88 }}>
+                      {metric.label}
+                    </Typography>
+                    <Typography variant="h4" fontWeight={800}>
+                      {metric.value}
+                    </Typography>
+                  </Box>
+                  <Chip label={metric.delta} size="small" />
                 </Stack>
-              </Stack>
-
-              <Divider />
-
-              <Grid container spacing={2}>
-                {overviewMetrics.map((metric) => (
-                  <Grid key={metric.label} size={{ xs: 12, sm: 6, lg: 3 }}>
-                    <Paper
-                      elevation={0}
-                      sx={{
-                        p: 2.5,
-                        borderRadius: 3,
-                        bgcolor: "grey.50",
-                      }}
-                    >
-                      <Stack direction="row" justifyContent="space-between" alignItems="baseline" spacing={2}>
-                        <Box>
-                          <Typography variant="body2" sx={{ opacity: 0.88 }}>
-                            {metric.label}
-                          </Typography>
-                          <Typography variant="h4" fontWeight={800}>
-                            {metric.value}
-                          </Typography>
-                        </Box>
-                        <Chip label={metric.delta} size="small" />
-                      </Stack>
-                    </Paper>
-                  </Grid>
-                ))}
-              </Grid>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </PageHeader>
 
       <Grid size={{ xs: 12, lg: 8 }}>
         <Card sx={{ height: "100%" }}>

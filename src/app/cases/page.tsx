@@ -21,6 +21,7 @@ import {
 import { getTranslations } from "next-intl/server";
 
 import { dossierAnimals, dossierParticipants, dossierTimeline } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 const toneColor = (tone: string) => {
   switch (tone) {
@@ -40,28 +41,12 @@ export default async function CasesPage() {
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card>
-          <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-            <Stack direction={{ xs: "column", lg: "row" }} justifyContent="space-between" spacing={2}>
-              <Box sx={{ maxWidth: 760 }}>
-                <Chip label={t("badge")} sx={{ mb: 2 }} />
-                <Typography variant="h4" fontWeight={800} gutterBottom>
-                  {t("caseTitle")}
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.92 }}>
-                  {t("caseSubtitle")}
-                </Typography>
-              </Box>
-              <Stack direction={{ xs: "column", lg: "row" }} spacing={1} flexWrap="wrap" alignItems="flex-start">
-                <Chip label={t("statusQueued")} />
-                <Chip label={t("statusSamples")} />
-                <Chip label={t("statusLab")} />
-              </Stack>
-            </Stack>
-          </CardContent>
-        </Card>
-      </Grid>
+      <PageHeader
+        badge={t("badge")}
+        title={t("caseTitle")}
+        subtitle={t("caseSubtitle")}
+        chips={[{ label: t("statusQueued") }, { label: t("statusSamples") }, { label: t("statusLab") }]}
+      />
 
       <Grid size={{ xs: 12, lg: 7 }}>
         <Card sx={{ height: "100%" }}>

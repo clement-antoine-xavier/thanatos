@@ -2,6 +2,7 @@ import { Card, CardContent, Chip, Grid, Stack, Table, TableBody, TableCell, Tabl
 import { getTranslations } from "next-intl/server";
 
 import { reportingExports, reportingKpis } from "@/app/mock-data";
+import { PageHeader } from "@/app/components/page-header";
 
 const reportingKpiKeyByLabel: Record<string, string> = {
   Déclarations: "declarations",
@@ -15,18 +16,7 @@ export default async function ReportingPage() {
 
   return (
     <Grid container spacing={2.5}>
-      <Grid size={{ xs: 12 }}>
-        <Card>
-          <CardContent>
-            <Typography variant="h5" fontWeight={800} gutterBottom>
-              {t("titleMain")}
-            </Typography>
-            <Typography color="text.secondary">
-              {t("subtitleMain")}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+      <PageHeader title={t("titleMain")} subtitle={t("subtitleMain")} titleVariant="h5" density="compact" />
 
       <Grid size={{ xs: 12 }}>
         <Grid container spacing={1.5}>
