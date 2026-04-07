@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar, Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -44,11 +46,7 @@ export default function SurveillanceHeader({ onOpenMobileDrawer }: SurveillanceH
         </Stack>
         <Stack direction="row" alignItems="center" spacing={1}>
           <LocaleSwitcher currentLocale={locale} englishLabel={t("englishLabel")} frenchLabel={t("frenchLabel")} />
-          <Button variant="outlined" sx={{ display: { xs: "none", sm: "inline-flex" } }}>
-            {t("export")}
-          </Button>
-          <Button variant="contained">{t("generateBulletin")}</Button>
-          <Avatar sx={{ width: 32, height: 32 }}>TH</Avatar>
+          <Avatar sx={{ width: 32, height: 32, bgcolor: "grey.900", color: "common.white" }}>TH</Avatar>
         </Stack>
       </Stack>
     </Paper>

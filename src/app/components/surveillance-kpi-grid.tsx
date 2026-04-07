@@ -1,7 +1,7 @@
 import { Card, CardContent, Chip, Grid, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 
-import { surveillanceKpis } from "../data";
+import { surveillanceKpis } from "@/app/data";
 
 export default function SurveillanceKpiGrid() {
   const t = useTranslations("dashboard");

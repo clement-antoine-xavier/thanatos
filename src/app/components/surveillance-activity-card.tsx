@@ -1,7 +1,7 @@
 import { Avatar, Card, CardContent, Grid, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 
-import { surveillanceActivities } from "../data";
+import { surveillanceActivities } from "@/app/data";
 
 export default function SurveillanceActivityCard() {
   const t = useTranslations("dashboard.activity");

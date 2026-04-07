@@ -4,15 +4,16 @@ import { useState } from "react";
 
 import { Box, Drawer } from "@mui/material";
 
-import SurveillanceHeader from "./components/surveillance-header";
-import SurveillanceNavigation from "./components/surveillance-navigation";
-import { drawerWidth } from "./data";
+import { drawerWidth } from "@/app/data";
 
-type SurveillanceLayoutProps = {
+import SurveillanceHeader from "./surveillance-header";
+import SurveillanceNavigation from "./surveillance-navigation";
+
+type ApplicationProps = {
   children: React.ReactNode;
 };
 
-export default function SurveillanceLayout({ children }: SurveillanceLayoutProps) {
+export default function Application({ children }: ApplicationProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -20,7 +21,7 @@ export default function SurveillanceLayout({ children }: SurveillanceLayoutProps
   };
 
   return (
-    <Box sx={{ minHeight: "100dvh", display: "flex", bgcolor: "grey.100" }}>
+    <Box sx={{ minHeight: "100dvh", display: "flex", bgcolor: "background.default" }}>
       <Box
         component="nav"
         sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
@@ -57,8 +58,9 @@ export default function SurveillanceLayout({ children }: SurveillanceLayoutProps
 
       <Box sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` } }}>
         <SurveillanceHeader onOpenMobileDrawer={handleDrawerToggle} />
-
-        <Box sx={{ p: { xs: 2, md: 4 } }}>{children}</Box>
+        <Box component="main" id="main-content" sx={{ p: { xs: 2, md: 4 } }}>
+          {children}
+        </Box>
       </Box>
     </Box>
   );

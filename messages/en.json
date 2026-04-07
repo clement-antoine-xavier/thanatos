@@ -5,8 +5,19 @@
   },
   "dashboard": {
     "shell": {
-      "title": "Surveillance Dashboard",
-      "subtitle": "Monitor mortality indicators, anomaly signals, and data quality in near real time.",
+      "title": "Mictlantecuhtli",
+      "subtitle": "Animal mortality surveillance cockpit and health signal monitor.",
+      "environmentLabel": "User environment",
+      "environments": {
+        "breeder": "Breeder",
+        "gds": "GDS",
+        "veterinarian": "Veterinarian",
+        "collector": "Collector",
+        "laboratory": "Laboratory",
+        "epidemiologist": "Epidemiologist",
+        "healthAdministration": "Health administration",
+        "platformAdministration": "Platform administration"
+      },
       "menu": "Menu",
       "export": "Export",
       "generateBulletin": "Generate Bulletin",
@@ -17,12 +28,253 @@
     },
     "navigation": {
       "overview": "Overview",
-      "dataIntegration": "Data Integration",
-      "mortalityRecords": "Mortality Records",
-      "indicators": "Indicators",
+      "reports": "Reports",
+      "cases": "Cases",
       "alerts": "Alerts",
-      "modeling": "Modeling",
-      "settings": "Settings"
+      "surveillance": "Surveillance",
+      "reporting": "Reporting",
+      "administration": "Administration"
+    },
+    "pages": {
+      "overview": {
+        "title": "Overview",
+        "subtitle": "Track volumes, alerts, and data completeness.",
+        "action": "New report",
+        "badge": "UI/UX prototype with mock data",
+        "heroTitle": "Mictlantecuhtli Platform",
+        "heroSubtitle": "Field reporting, sanitary qualification, removal, veterinary follow-up, and signal surveillance in one cockpit.",
+        "heroActions": {
+          "newReport": "New report",
+          "viewAlerts": "View alerts"
+        },
+        "pipelineTitle": "Operational pipeline",
+        "pipelineSubtitle": "Quick reading of the flow between field work, qualification, and follow-up.",
+        "pipelineLastUpdate": "Last update 06:18",
+        "alertsTitle": "Priority alerts",
+        "casesTitle": "Latest cases",
+        "casesSubtitle": "Synthetic view of cases currently being processed.",
+        "openQueue": "Open queue",
+        "territoriesTitle": "Territorial overview",
+        "activityTitle": "Surveillance activity",
+        "deathsSuffix": "deaths over 30 days",
+        "tableHeaders": {
+          "case": "Case",
+          "farm": "Farm",
+          "species": "Species",
+          "priority": "Priority",
+          "updated": "Updated"
+        }
+      },
+      "reports": {
+        "title": "Field reports",
+        "subtitle": "Create and complete single-death or multiple-mortality submissions.",
+        "action": "Save",
+        "badge": "UI/UX only · mock data",
+        "titleSingle": "Single dead animal report",
+        "subtitleSingle": "Mobile-first simplified form with a quick read of the essential information.",
+        "submit": "Submit",
+        "saveDraft": "Save draft",
+        "titleMultiple": "Multiple mortality",
+        "subtitleMultiple": "A visual block to show an overmortality case with observed versus expected comparison.",
+        "escalateCase": "Escalate case",
+        "lastReportsTitle": "Latest reports",
+        "lastReportsSubtitle": "Mock data to illustrate statuses and prioritization.",
+        "filterDeclarations": "Filter declarations",
+        "fields": {
+          "farm": "Farm",
+          "animalId": "Animal ID",
+          "species": "Species",
+          "date": "Discovery date",
+          "removal": "Removal request",
+          "location": "Precise location",
+          "symptoms": "Observed symptoms",
+          "farmGroup": "Farm / group",
+          "batch": "Batch",
+          "window": "Window",
+          "expectedDeaths": "Expected deaths",
+          "observedDeaths": "Observed deaths",
+          "associatedSymptoms": "Associated symptoms"
+        },
+        "tableHeaders": {
+          "reference": "Reference",
+          "report": "Report",
+          "actor": "Actor",
+          "status": "Status",
+          "time": "Time"
+        }
+      },
+      "cases": {
+        "title": "Active cases",
+        "subtitle": "Follow the case from the first report to closure.",
+        "action": "Open case",
+        "badge": "Main case sheet",
+        "caseTitle": "Case CAS-10482",
+        "caseSubtitle": "End-to-end view of a fictional case, with timeline, participants, linked animals, and pending actions.",
+        "statusQueued": "In qualification",
+        "statusSamples": "Samples requested",
+        "statusLab": "Waiting for lab",
+        "timelineTitle": "Case timeline",
+        "summaryTitle": "Case summary",
+        "summary": {
+          "animals": "Linked animals",
+          "actions": "Open actions"
+        },
+        "participantsTitle": "Case participants",
+        "animalsTitle": "Animals linked to the case",
+        "tableHeaders": {
+          "id": "Identifier",
+          "age": "Age",
+          "state": "State"
+        },
+        "attachmentsTitle": "Actions and attachments",
+        "attachments": {
+          "photos": "Field photos",
+          "removalSlip": "Removal slip",
+          "vetReport": "Veterinary report",
+          "fileCount": "2 files",
+          "planned": "Planned",
+          "toSign": "To sign"
+        }
+      },
+      "alerts": {
+        "title": "Alert center",
+        "subtitle": "Qualify, escalate, and close critical signals.",
+        "action": "Escalate",
+        "badge": "UI/UX only · fake incident management",
+        "titleInbox": "Alert inbox",
+        "titleSelected": "Selected alert detail",
+        "subtitleSelected": "Decision block for sanitary teams.",
+        "impact": "Estimated impact",
+        "responsiblePrefix": "Owner:",
+        "escalate": "Escalate",
+        "assign": "Assign",
+        "lift": "Lift",
+        "journalTitle": "Alert log",
+        "tableHeaders": {
+          "reference": "Reference",
+          "title": "Title",
+          "region": "Region",
+          "owner": "Owner",
+          "level": "Level"
+        }
+      },
+      "surveillance": {
+        "title": "Analytics surveillance",
+        "subtitle": "Compare observed versus expected and spot unusual signals.",
+        "action": "Export",
+        "badge": "Fictional analytics view",
+        "titleMain": "Analytics surveillance",
+        "subtitleMain": "Mock observed-versus-expected analysis with fake signals, territories, and time trends.",
+        "chips": {
+          "detection": "Detection",
+          "clustering": "Clustering",
+          "trends": "Trends"
+        },
+        "territorySuffix": "sensitive zones over 30 days",
+        "trendTitle": "Fictional trend curve",
+        "trendSubtitle": "Simulated time series to visualize a mortality surge.",
+        "signalsTitle": "Signals compared with expected",
+        "tableHeaders": {
+          "signal": "Signal",
+          "species": "Species",
+          "region": "Region",
+          "expected": "Expected",
+          "observed": "Observed",
+          "status": "Status"
+        }
+      },
+      "veterinaryInterventions": {
+        "title": "Veterinary interventions",
+        "subtitle": "Plan field visits and follow clinical qualification.",
+        "action": "Schedule",
+        "badge": "Field supervision mockup",
+        "titleMain": "Veterinary interventions",
+        "subtitleMain": "Visit planning, clinical qualification, and sample follow-up.",
+        "visitsTitle": "Field visits",
+        "samplesTitle": "Ordered samples",
+        "tableHeaders": {
+          "case": "Case",
+          "farm": "Farm",
+          "veterinarian": "Veterinarian",
+          "slot": "Slot",
+          "priority": "Priority",
+          "status": "Status"
+        }
+      },
+      "removalRequests": {
+        "title": "Removal requests",
+        "subtitle": "Organize pickup operations and trace carcass handling.",
+        "action": "Assign",
+        "titleMain": "Removal requests",
+        "subtitleMain": "Carcass pickup coordination, collection slots, and handling traceability.",
+        "tableHeaders": {
+          "request": "Request",
+          "case": "Case",
+          "farm": "Farm",
+          "slot": "Slot",
+          "collector": "Collector",
+          "status": "Status"
+        }
+      },
+      "laboratoryOperations": {
+        "title": "Laboratory operations",
+        "subtitle": "Manage analysis queue and publish results.",
+        "action": "Publish",
+        "titleMain": "Laboratory operations",
+        "subtitleMain": "Manage the analysis queue and publish results.",
+        "queueTitle": "Analysis queue",
+        "resultsTitle": "Published results",
+        "tableHeaders": {
+          "sample": "Sample",
+          "case": "Case",
+          "species": "Species",
+          "analysis": "Analysis",
+          "priority": "Priority",
+          "status": "Status"
+        }
+      },
+      "reporting": {
+        "title": "Reporting",
+        "subtitle": "Generate operational and institutional summaries.",
+        "action": "Generate",
+        "titleMain": "Reporting",
+        "subtitleMain": "Operational, epidemiological, and institutional summaries.",
+        "kpis": {
+          "declarations": "Declarations",
+          "medianQualificationDelay": "Median qualification delay",
+          "criticalAlerts": "Critical alerts",
+          "closureRate": "Closure rate"
+        },
+        "exportsTitle": "Available exports",
+        "tableHeaders": {
+          "report": "Report",
+          "owner": "Owner",
+          "generatedAt": "Generated at",
+          "status": "Status"
+        }
+      },
+      "administration": {
+        "title": "Administration",
+        "subtitle": "Manage users, reference data, and imports.",
+        "action": "Manage",
+        "badge": "Fictional technical cockpit",
+        "titleMain": "Administration",
+        "subtitleMain": "Technical and business control board: users, reference data, imports, and audit control.",
+        "chips": {
+          "users": "27 users",
+          "imports": "3 imports",
+          "audit": "Audit active"
+        },
+        "usersTitle": "User management",
+        "referentialsTitle": "Key reference data",
+        "importsTitle": "Import monitoring",
+        "tableHeaders": {
+          "name": "Name",
+          "role": "Role",
+          "territory": "Territory",
+          "status": "Status"
+        }
+      }
     },
     "kpis": {
       "mortalityRate": "Mortality Rate",

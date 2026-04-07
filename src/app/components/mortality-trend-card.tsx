@@ -1,7 +1,7 @@
 import { Box, Card, CardContent, Chip, Grid, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 
-import { mortalityTrendHeights } from "../data";
+import { mortalityTrendHeights } from "@/app/data";
 
 export default function MortalityTrendCard() {
   const t = useTranslations("dashboard.mortalityTrend");

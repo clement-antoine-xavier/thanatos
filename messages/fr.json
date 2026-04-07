@@ -5,8 +5,19 @@
   },
   "dashboard": {
     "shell": {
-      "title": "Tableau de bord de surveillance",
-      "subtitle": "Surveillez en temps quasi réel les indicateurs de mortalité, les signaux d'anomalie et la qualité des données.",
+      "title": "Mictlantecuhtli",
+      "subtitle": "Cockpit de surveillance des mortalités animales et des signaux sanitaires.",
+      "environmentLabel": "Environnement utilisateur",
+      "environments": {
+        "breeder": "Éleveur",
+        "gds": "GDS",
+        "veterinarian": "Vétérinaire",
+        "collector": "Équarrisseur",
+        "laboratory": "Laboratoire",
+        "epidemiologist": "Épidémiologiste",
+        "healthAdministration": "Administration sanitaire",
+        "platformAdministration": "Administration plateforme"
+      },
       "menu": "Menu",
       "export": "Exporter",
       "generateBulletin": "Générer le bulletin",
@@ -17,12 +28,253 @@
     },
     "navigation": {
       "overview": "Vue d'ensemble",
-      "dataIntegration": "Intégration des données",
-      "mortalityRecords": "Registres de mortalité",
-      "indicators": "Indicateurs",
+      "reports": "Signalements",
+      "cases": "Dossiers",
       "alerts": "Alertes",
-      "modeling": "Modélisation",
-      "settings": "Paramètres"
+      "surveillance": "Surveillance",
+      "reporting": "Reporting",
+      "administration": "Administration"
+    },
+    "pages": {
+      "overview": {
+        "title": "Vue d'ensemble",
+        "subtitle": "Suivi des volumes, des alertes et de la complétude des données.",
+        "action": "Nouveau signalement",
+        "badge": "Prototype UI/UX avec données fictives",
+        "heroTitle": "Plateforme Mictlantecuhtli",
+        "heroSubtitle": "Déclaration terrain, qualification sanitaire, enlèvement, suivi vétérinaire et surveillance des signaux, dans un cockpit unique.",
+        "heroActions": {
+          "newReport": "Nouveau signalement",
+          "viewAlerts": "Voir les alertes"
+        },
+        "pipelineTitle": "Pipeline opérationnel",
+        "pipelineSubtitle": "Lecture rapide du flux entre terrain, qualification et prise en charge.",
+        "pipelineLastUpdate": "Dernière mise à jour 06:18",
+        "alertsTitle": "Alertes prioritaires",
+        "casesTitle": "Derniers dossiers",
+        "casesSubtitle": "Vue synthétique des cas en cours de traitement.",
+        "openQueue": "Ouvrir la file",
+        "territoriesTitle": "Lecture territoriale",
+        "activityTitle": "Activité de surveillance",
+        "deathsSuffix": "décès sur 30 jours",
+        "tableHeaders": {
+          "case": "Dossier",
+          "farm": "Exploitation",
+          "species": "Espèce",
+          "priority": "Priorité",
+          "updated": "MàJ"
+        }
+      },
+      "reports": {
+        "title": "Signalements terrain",
+        "subtitle": "Créer et compléter les déclarations d’un animal mort ou d’une mortalité multiple.",
+        "action": "Enregistrer",
+        "badge": "UI/UX uniquement · fausses données",
+        "titleSingle": "Déclaration d’un animal mort",
+        "subtitleSingle": "Formulaire simplifié, pensé pour le mobile, avec lecture rapide des informations essentielles.",
+        "submit": "Soumettre",
+        "saveDraft": "Enregistrer le brouillon",
+        "titleMultiple": "Mortalités multiples",
+        "subtitleMultiple": "Un bloc visuel pour montrer un cas de surmortalité avec comparaison observé / attendu.",
+        "escalateCase": "Escalader le cas",
+        "lastReportsTitle": "Derniers signalements",
+        "lastReportsSubtitle": "Faux jeu de données pour illustrer les statuts et la priorisation.",
+        "filterDeclarations": "Filtrer les déclarations",
+        "fields": {
+          "farm": "Exploitation",
+          "animalId": "Identifiant animal",
+          "species": "Espèce",
+          "date": "Date de découverte",
+          "removal": "Demande d’enlèvement",
+          "location": "Localisation précise",
+          "symptoms": "Symptômes observés",
+          "farmGroup": "Exploit. / groupement",
+          "batch": "Lot",
+          "window": "Fenêtre",
+          "expectedDeaths": "Décès attendus",
+          "observedDeaths": "Décès observés",
+          "associatedSymptoms": "Symptômes associés"
+        },
+        "tableHeaders": {
+          "reference": "Référence",
+          "report": "Signalement",
+          "actor": "Acteur",
+          "status": "Statut",
+          "time": "Heure"
+        }
+      },
+      "cases": {
+        "title": "Dossiers en cours",
+        "subtitle": "Suivre la vie du dossier de la déclaration jusqu’à la clôture.",
+        "action": "Ouvrir un dossier",
+        "badge": "Fiche cas principale",
+        "caseTitle": "Dossier CAS-10482",
+        "caseSubtitle": "Vue de suivi bout en bout d’un dossier fictif, avec timeline, participants, animaux rattachés et actions en attente.",
+        "statusQueued": "En qualification",
+        "statusSamples": "Prélèvements demandés",
+        "statusLab": "En attente labo",
+        "timelineTitle": "Chronologie du dossier",
+        "summaryTitle": "Résumé du dossier",
+        "summary": {
+          "animals": "Animaux rattachés",
+          "actions": "Actions ouvertes"
+        },
+        "participantsTitle": "Acteurs du dossier",
+        "animalsTitle": "Animaux rattachés au cas",
+        "tableHeaders": {
+          "id": "Identifiant",
+          "age": "Âge",
+          "state": "État"
+        },
+        "attachmentsTitle": "Actions et pièces jointes",
+        "attachments": {
+          "photos": "Photos terrain",
+          "removalSlip": "Bordereau d’enlèvement",
+          "vetReport": "Rapport vétérinaire",
+          "fileCount": "2 fichiers",
+          "planned": "Planifié",
+          "toSign": "À signer"
+        }
+      },
+      "alerts": {
+        "title": "Centre d'alertes",
+        "subtitle": "Qualifier, escalader et clôturer les signaux critiques.",
+        "action": "Escalader",
+        "badge": "UI/UX uniquement · faux incident management",
+        "titleInbox": "Inbox des alertes",
+        "titleSelected": "Détail d’alerte sélectionnée",
+        "subtitleSelected": "Bloc de revue décisionnelle pour les équipes sanitaires.",
+        "impact": "Impact estimé",
+        "responsiblePrefix": "Responsable :",
+        "escalate": "Escalader",
+        "assign": "Attribuer",
+        "lift": "Lever",
+        "journalTitle": "Journal des alertes",
+        "tableHeaders": {
+          "reference": "Référence",
+          "title": "Intitulé",
+          "region": "Région",
+          "owner": "Responsable",
+          "level": "Niveau"
+        }
+      },
+      "surveillance": {
+        "title": "Surveillance analytique",
+        "subtitle": "Comparer l’observé à l’attendu et repérer les signaux inhabituels.",
+        "action": "Exporter",
+        "badge": "Vue analytique fictive",
+        "titleMain": "Surveillance analytique",
+        "subtitleMain": "Maquette d’analyse observé vs attendu avec faux signaux, territoires et tendances temporelles.",
+        "chips": {
+          "detection": "Détection",
+          "clustering": "Clustering",
+          "trends": "Tendances"
+        },
+        "territorySuffix": "zones sensibles sur 30 jours",
+        "trendTitle": "Courbe de tendance fictive",
+        "trendSubtitle": "Série temporelle simulée pour visualiser un emballement de la mortalité.",
+        "signalsTitle": "Signaux comparés à l’attendu",
+        "tableHeaders": {
+          "signal": "Signal",
+          "species": "Espèce",
+          "region": "Région",
+          "expected": "Attendu",
+          "observed": "Observé",
+          "status": "Statut"
+        }
+      },
+      "veterinaryInterventions": {
+        "title": "Interventions vétérinaires",
+        "subtitle": "Planifier les visites et suivre la qualification clinique.",
+        "action": "Planifier",
+        "badge": "Maquette de supervision terrain",
+        "titleMain": "Interventions vétérinaires",
+        "subtitleMain": "Planification des visites, qualification clinique et suivi des prélèvements.",
+        "visitsTitle": "Visites terrain",
+        "samplesTitle": "Prélèvements prescrits",
+        "tableHeaders": {
+          "case": "Dossier",
+          "farm": "Exploitation",
+          "veterinarian": "Vétérinaire",
+          "slot": "Créneau",
+          "priority": "Priorité",
+          "status": "Statut"
+        }
+      },
+      "removalRequests": {
+        "title": "Demandes d’enlèvement",
+        "subtitle": "Organiser la collecte et tracer la prise en charge.",
+        "action": "Affecter",
+        "titleMain": "Demandes d’enlèvement",
+        "subtitleMain": "Pilotage des enlèvements de carcasses, créneaux de collecte et preuves de prise en charge.",
+        "tableHeaders": {
+          "request": "Demande",
+          "case": "Dossier",
+          "farm": "Exploitation",
+          "slot": "Créneau",
+          "collector": "Prestataire",
+          "status": "Statut"
+        }
+      },
+      "laboratoryOperations": {
+        "title": "Opérations laboratoire",
+        "subtitle": "Piloter la file d’analyses et publier les résultats.",
+        "action": "Publier",
+        "titleMain": "Opérations laboratoire",
+        "subtitleMain": "Réception des échantillons, analyse et publication des résultats.",
+        "queueTitle": "File d’analyses",
+        "resultsTitle": "Résultats publiés",
+        "tableHeaders": {
+          "sample": "Échantillon",
+          "case": "Dossier",
+          "species": "Espèce",
+          "analysis": "Analyse",
+          "priority": "Priorité",
+          "status": "Statut"
+        }
+      },
+      "reporting": {
+        "title": "Reporting",
+        "subtitle": "Produire les synthèses opérationnelles et institutionnelles.",
+        "action": "Générer",
+        "titleMain": "Reporting",
+        "subtitleMain": "Synthèses opérationnelles, épidémiologiques et exports institutionnels.",
+        "kpis": {
+          "declarations": "Déclarations",
+          "medianQualificationDelay": "Délai qualification médian",
+          "criticalAlerts": "Alertes critiques",
+          "closureRate": "Taux clôture"
+        },
+        "exportsTitle": "Exports disponibles",
+        "tableHeaders": {
+          "report": "Rapport",
+          "owner": "Propriétaire",
+          "generatedAt": "Généré le",
+          "status": "Statut"
+        }
+      },
+      "administration": {
+        "title": "Administration",
+        "subtitle": "Gérer les utilisateurs, les référentiels et les imports.",
+        "action": "Gérer",
+        "badge": "Cockpit technique fictif",
+        "titleMain": "Administration",
+        "subtitleMain": "Maquette de pilotage technique et métier: utilisateurs, référentiels, imports et contrôle d’audit.",
+        "chips": {
+          "users": "27 utilisateurs",
+          "imports": "3 imports",
+          "audit": "Audit actif"
+        },
+        "usersTitle": "Gestion des utilisateurs",
+        "referentialsTitle": "Référentiels clés",
+        "importsTitle": "Surveillance des imports",
+        "tableHeaders": {
+          "name": "Nom",
+          "role": "Rôle",
+          "territory": "Territoire",
+          "status": "Statut"
+        }
+      }
     },
     "kpis": {
       "mortalityRate": "Taux de mortalité",

@@ -60,8 +60,8 @@ Face à des données de santé animale hétérogènes et à des contraintes prat
 
 Pour mieux comprendre les flux de données et les acteurs impliqués, voici un résumé du processus de [gestion des décès animaux dans les élevages](docs/ANIMAL_DEATH_PROCESS.md).
 
----
+Pour le PRD fonctionnel et UX/UI complet de la plateforme, voir [le PRD](docs/PRODUCT_SPECIFICATION.md).
 
 ## Contribution
 
-Pour la contribution, merci de consulter le guide de [contribution](CONTRIBUTING.md) et le [code de conduite](CODE_OF_CONDUCT.md) du projet.
+Pour la contribution, merci de consulter [le guide de contribution](COTRIBUTING.md) et le [code de conduite](CODE_OF_CONDUCT.md) du projet.

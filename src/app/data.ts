@@ -1,13 +1,13 @@
-export const drawerWidth = 260;
+export const drawerWidth = 288;
 
 export const navigation = [
-  { key: "overview" },
-  { key: "dataIntegration" },
-  { key: "mortalityRecords" },
-  { key: "indicators" },
-  { key: "alerts" },
-  { key: "modeling" },
-  { key: "settings" },
+  { key: "overview", href: "/overview" },
+  { key: "reports", href: "/reports" },
+  { key: "cases", href: "/cases" },
+  { key: "alerts", href: "/alerts" },
+  { key: "surveillance", href: "/surveillance" },
+  { key: "reporting", href: "/reporting" },
+  { key: "administration", href: "/administration" },
 ] as const;
 
 export const surveillanceKpis = [

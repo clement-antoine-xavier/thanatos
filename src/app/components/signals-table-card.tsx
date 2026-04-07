@@ -1,7 +1,7 @@
 import { Card, CardContent, Chip, Grid, Table, TableBody, TableCell, TableHead, TableRow, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 
-import { signals } from "../data";
+import { signals } from "@/app/data";
 
 export default function SignalsTableCard() {
   const t = useTranslations("dashboard.signals");

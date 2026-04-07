@@ -7,6 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 
+import Application from "./components/application";
 import theme from "@/theme";
 
 const roboto = Roboto({
@@ -37,8 +38,8 @@ export default async function RootLayout({
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              {children}
+            <NextIntlClientProvider locale={locale} messages={{ dashboard: messages.dashboard }}>
+              <Application>{children}</Application>
             </NextIntlClientProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

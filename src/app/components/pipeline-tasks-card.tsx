@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardContent, Divider, Grid, LinearProgress, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 
-import { pipelineTasks } from "../data";
+import { pipelineTasks } from "@/app/data";
 
 export default function PipelineTasksCard() {
   const t = useTranslations("dashboard.pipelineTasks");
